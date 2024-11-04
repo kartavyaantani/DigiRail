@@ -7,7 +7,7 @@ import StaBmuAddUp from './StaBmuAddUp';
 import StaBmuAddDown from './StaBmuAddDown';
 
 const Item = styled(Paper)(() => ({
-  backgroundColor: 'transparent',
+  backgroundColor: 'transparent'
 }));
 
 export default function StaBmuAddGrid() {
@@ -18,8 +18,12 @@ export default function StaBmuAddGrid() {
         divider={<Divider orientation="vertical" flexItem />}
         spacing={2}
       >
-        <Item><StaBmuAddUp /></Item>
-        <Item><StaBmuAddDown /></Item>
+        <Item>
+          <StaBmuAddUp />
+        </Item>
+        <Item>
+          <StaBmuAddDown />
+        </Item>
       </Stack>
     </div>
   );

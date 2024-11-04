@@ -33,13 +33,13 @@ function TabPanel(props) {
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired
 };
 
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
+    'aria-controls': `vertical-tabpanel-${index}`
   };
 }
 
@@ -53,7 +53,8 @@ export default function StaTrainLine() {
   return (
     <Box
       sx={{
-        flexGrow: 1, display: 'flex'
+        flexGrow: 1,
+        display: 'flex'
       }}
     >
       <Tabs
@@ -64,10 +65,10 @@ export default function StaTrainLine() {
         aria-label="Vertical tabs example"
         sx={{ borderRight: 1, borderColor: 'divider' }}
       >
-        <Tab label="Main Line" {...a11yProps(0)} />
-        <Tab label="Coastal line" {...a11yProps(1)} />
-        <Tab label="Puttalam line" {...a11yProps(2)} />
-        <Tab label="Kelani Valley" {...a11yProps(3)} />
+        <Tab label="West Line" {...a11yProps(0)} />
+        <Tab label="East Line" {...a11yProps(1)} />
+        <Tab label="North Line" {...a11yProps(2)} />
+        <Tab label="South Line" {...a11yProps(3)} />
       </Tabs>
       <TabPanel value={value} index={0}>
         <StaStationListML />

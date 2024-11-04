@@ -27,11 +27,11 @@ import firebase from '../../firebase/Firebase';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
-    padding: theme.spacing(2),
+    padding: theme.spacing(2)
   },
   '& .MuiDialogActions-root': {
-    padding: theme.spacing(1),
-  },
+    padding: theme.spacing(1)
+  }
 }));
 
 const BootstrapDialogTitle = (props) => {
@@ -48,7 +48,7 @@ const BootstrapDialogTitle = (props) => {
             position: 'absolute',
             right: 8,
             top: 8,
-            color: (theme) => theme.palette.grey[500],
+            color: (theme) => theme.palette.grey[500]
           }}
         >
           <CloseIcon />
@@ -60,35 +60,35 @@ const BootstrapDialogTitle = (props) => {
 
 BootstrapDialogTitle.propTypes = {
   children: PropTypes.node,
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired
 };
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    color: theme.palette.common.white
   },
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
-  },
+    fontSize: 14
+  }
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
-    backgroundColor: theme.palette.action.hover,
+    backgroundColor: theme.palette.action.hover
   },
   // hide last border
   '&:last-child td, &:last-child th': {
-    border: 0,
-  },
+    border: 0
+  }
 }));
 
 const Grid = styled(MuiGrid)(({ theme }) => ({
   width: '100%',
   ...theme.typography.body2,
   '& [role="separator"]': {
-    margin: theme.spacing(0, 2),
-  },
+    margin: theme.spacing(0, 2)
+  }
 }));
 
 export default function TicAdd() {
@@ -157,7 +157,13 @@ export default function TicAdd() {
 
   return (
     <div>
-      <Button variant="contained" color="success" size="large" startIcon={<AddIcon />} onClick={handleClickOpen}>
+      <Button
+        variant="contained"
+        color="success"
+        size="large"
+        startIcon={<AddIcon />}
+        onClick={handleClickOpen}
+      >
         Add New Reservation
       </Button>
       <BootstrapDialog
@@ -166,7 +172,10 @@ export default function TicAdd() {
         aria-labelledby="customized-dialog-title"
         open={open}
       >
-        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
+        <BootstrapDialogTitle
+          id="customized-dialog-title"
+          onClose={handleClose}
+        >
           <h2>Add New RESERVATION</h2>
         </BootstrapDialogTitle>
         <DialogContent dividers>
@@ -183,7 +192,9 @@ export default function TicAdd() {
               />
               <br />
               <FormControl sx={{ m: 2, width: 300 }}>
-                <InputLabel id="demo-simple-select-label">Start Station</InputLabel>
+                <InputLabel id="demo-simple-select-label">
+                  Start Station
+                </InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
@@ -191,36 +202,27 @@ export default function TicAdd() {
                   label="Start Station"
                   onChange={(e) => setStartStation(e.target.value)}
                 >
-                  <MenuItem value="Aluthgama">Aluthgama</MenuItem>
-                  <MenuItem value="Ambepussa">Ambepussa</MenuItem>
-                  <MenuItem value="Badulla">Badulla</MenuItem>
-                  <MenuItem value="Batticaloa">Batticaloa</MenuItem>
-                  <MenuItem value="Colombo Fort">Colombo Fort</MenuItem>
-                  <MenuItem value="Gampaha">Gampaha</MenuItem>
-                  <MenuItem value="Ganewaththa">Ganewaththa</MenuItem>
-                  <MenuItem value="Jaffna">Jaffna</MenuItem>
-                  <MenuItem value="Kalutara South">Kalutara South</MenuItem>
-                  <MenuItem value="Kandy">Kandy</MenuItem>
-                  <MenuItem value="Kankesanturai">Kankesanturai</MenuItem>
-                  <MenuItem value="Kurunegala">Kurunegala</MenuItem>
-                  <MenuItem value="Maho">Maho</MenuItem>
-                  <MenuItem value="Mannar">Mannar</MenuItem>
-                  <MenuItem value="Matale">Matale</MenuItem>
-                  <MenuItem value="Matara">Matara</MenuItem>
-                  <MenuItem value="Mirigama">Mirigama</MenuItem>
-                  <MenuItem value="Moratuwa">Moratuwa</MenuItem>
-                  <MenuItem value="Panadura">Panadura</MenuItem>
-                  <MenuItem value="Polgahawela">Polgahawela</MenuItem>
-                  <MenuItem value="Rambukkana">Rambukkana</MenuItem>
-                  <MenuItem value="Rathmalana">Rathmalana</MenuItem>
-                  <MenuItem value="Talaimannar">Talaimannar</MenuItem>
-                  <MenuItem value="Trincomalee">Trincomalee</MenuItem>
-                  <MenuItem value="Vavuniya">Vavuniya</MenuItem>
-                  <MenuItem value="Veyangoda">Veyangoda</MenuItem>
+                  <MenuItem value="Jaipur">Jaipur</MenuItem>
+                  <MenuItem value="Udaipur">Udaipur</MenuItem>
+                  <MenuItem value="Jodhpur">Jodhpur</MenuItem>
+                  <MenuItem value="Bikaner">Bikaner</MenuItem>
+                  <MenuItem value="Ajmer">Ajmer</MenuItem>
+                  <MenuItem value="Kota">Kota</MenuItem>
+                  <MenuItem value="Alwar">Alwar</MenuItem>
+                  <MenuItem value="Bhilwara">Bhilwara</MenuItem>
+                  <MenuItem value="Sikar">Sikar</MenuItem>
+                  <MenuItem value="Pali">Pali</MenuItem>
+                  <MenuItem value="Chittorgarh">Chittorgarh</MenuItem>
+                  <MenuItem value="Sri Ganganagar">Sri Ganganagar</MenuItem>
+                  <MenuItem value="Barmer">Barmer</MenuItem>
+                  <MenuItem value="Bundi">Bundi</MenuItem>
+                  <MenuItem value="Jaisalmer">Jaisalmer</MenuItem>
                 </Select>
               </FormControl>
               <FormControl sx={{ m: 2, width: 300 }}>
-                <InputLabel id="demo-simple-select-label">End Station</InputLabel>
+                <InputLabel id="demo-simple-select-label">
+                  End Station
+                </InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
@@ -228,32 +230,21 @@ export default function TicAdd() {
                   label="End Station"
                   onChange={(e) => setEndStation(e.target.value)}
                 >
-                  <MenuItem value="Aluthgama">Aluthgama</MenuItem>
-                  <MenuItem value="Ambepussa">Ambepussa</MenuItem>
-                  <MenuItem value="Badulla">Badulla</MenuItem>
-                  <MenuItem value="Batticaloa">Batticaloa</MenuItem>
-                  <MenuItem value="Colombo Fort">Colombo Fort</MenuItem>
-                  <MenuItem value="Gampaha">Gampaha</MenuItem>
-                  <MenuItem value="Ganewaththa">Ganewaththa</MenuItem>
-                  <MenuItem value="Jaffna">Jaffna</MenuItem>
-                  <MenuItem value="Kalutara South">Kalutara South</MenuItem>
-                  <MenuItem value="Kandy">Kandy</MenuItem>
-                  <MenuItem value="Kankesanturai">Kankesanturai</MenuItem>
-                  <MenuItem value="Kurunegala">Kurunegala</MenuItem>
-                  <MenuItem value="Maho">Maho</MenuItem>
-                  <MenuItem value="Mannar">Mannar</MenuItem>
-                  <MenuItem value="Matale">Matale</MenuItem>
-                  <MenuItem value="Matara">Matara</MenuItem>
-                  <MenuItem value="Mirigama">Mirigama</MenuItem>
-                  <MenuItem value="Moratuwa">Moratuwa</MenuItem>
-                  <MenuItem value="Panadura">Panadura</MenuItem>
-                  <MenuItem value="Polgahawela">Polgahawela</MenuItem>
-                  <MenuItem value="Rambukkana">Rambukkana</MenuItem>
-                  <MenuItem value="Rathmalana">Rathmalana</MenuItem>
-                  <MenuItem value="Talaimannar">Talaimannar</MenuItem>
-                  <MenuItem value="Trincomalee">Trincomalee</MenuItem>
-                  <MenuItem value="Vavuniya">Vavuniya</MenuItem>
-                  <MenuItem value="Veyangoda">Veyangoda</MenuItem>
+                  <MenuItem value="Ahmedabad">Ahmedabad</MenuItem>
+                  <MenuItem value="Surat">Surat</MenuItem>
+                  <MenuItem value="Vadodara">Vadodara</MenuItem>
+                  <MenuItem value="Rajkot">Rajkot</MenuItem>
+                  <MenuItem value="Bhavnagar">Bhavnagar</MenuItem>
+                  <MenuItem value="Jamnagar">Jamnagar</MenuItem>
+                  <MenuItem value="Junagadh">Junagadh</MenuItem>
+                  <MenuItem value="Gandhinagar">Gandhinagar</MenuItem>
+                  <MenuItem value="Anand">Anand</MenuItem>
+                  <MenuItem value="Mehsana">Mehsana</MenuItem>
+                  <MenuItem value="Navsari">Navsari</MenuItem>
+                  <MenuItem value="Morbi">Morbi</MenuItem>
+                  <MenuItem value="Vapi">Vapi</MenuItem>
+                  <MenuItem value="Palanpur">Palanpur</MenuItem>
+                  <MenuItem value="Bhuj">Bhuj</MenuItem>
                 </Select>
               </FormControl>
               <br />
@@ -266,26 +257,36 @@ export default function TicAdd() {
                   label="Train"
                   onChange={(e) => setTrain(e.target.value)}
                 >
-                  <MenuItem value="-">-</MenuItem>
-                  <MenuItem value="Udarata Menike">Udarata Menike</MenuItem>
-                  <MenuItem value="Podi Menike">Podi Menike</MenuItem>
-                  <MenuItem value="Tikiri Menike">Tikiri Menike</MenuItem>
-                  <MenuItem value="Senkadagala Menike">Senkadagala Menike</MenuItem>
-                  <MenuItem value="Yal Devi">Yal Devi</MenuItem>
-                  <MenuItem value="Uttara Devi">Uttara Devi</MenuItem>
-                  <MenuItem value="Udaya Devi">Udaya Devi</MenuItem>
-                  <MenuItem value="Rajarata Rejini">Rajarata Rejini</MenuItem>
-                  <MenuItem value="Ruhunu Kumari">Ruhunu Kumari</MenuItem>
-                  <MenuItem value="Muthu Kumari">Muthu Kumari</MenuItem>
-                  <MenuItem value="Samudra Devi">Samudra Devi</MenuItem>
-                  <MenuItem value="Galu Kumari">Galu Kumari</MenuItem>
-                  <MenuItem value="Sagarika">Sagarika</MenuItem>
-                  <MenuItem value="Sri Devi">Sri Devi</MenuItem>
-                  <MenuItem value="Meena Gaya">Meena Gaya</MenuItem>
-                  <MenuItem value="Denuwara Manike">Denuwara Manike</MenuItem>
-                  <MenuItem value="Pulathisi">Pulathisi</MenuItem>
-                  <MenuItem value="Dakshina">Dakshina</MenuItem>
-                  <MenuItem value="Airport Express">Airport Express</MenuItem>
+                  <MenuItem value="12956">
+                    Jaipur - Mumbai Central Superfast Express (12956)
+                  </MenuItem>
+                  <MenuItem value="12989">
+                    Ajmer - Dadar Western Express (12989)
+                  </MenuItem>
+                  <MenuItem value="12979">
+                    Jaipur - Bandra Terminus Superfast Express (12979)
+                  </MenuItem>
+                  <MenuItem value="19707">
+                    Aravali Express (Jaipur - Bandra Terminus) (19707)
+                  </MenuItem>
+                  <MenuItem value="12995">
+                    Jaipur - Porbandar Express (12995)
+                  </MenuItem>
+                  <MenuItem value="22474">
+                    Bikaner - Bandra Terminus Superfast Express (22474)
+                  </MenuItem>
+                  <MenuItem value="22932">
+                    Jaipur - Ahmedabad Intercity Express (22932)
+                  </MenuItem>
+                  <MenuItem value="19717">
+                    Jaipur - Secunderabad Express (19717)
+                  </MenuItem>
+                  <MenuItem value="19420">
+                    Ajmer - Ahmedabad Intercity Express (19420)
+                  </MenuItem>
+                  <MenuItem value="17019">
+                    Jaipur - Hyderabad Weekly Express (17019)
+                  </MenuItem>
                 </Select>
               </FormControl>
               <FormControl sx={{ m: 2, width: 300 }}>
@@ -297,14 +298,30 @@ export default function TicAdd() {
                   label="Class"
                   onChange={(e) => setClz(e.target.value)}
                 >
-                  <MenuItem value="1st class Reserved">1st class Reserved</MenuItem>
-                  <MenuItem value="1st class Sleeper">1st class Sleeper</MenuItem>
-                  <MenuItem value="1st class Air-Conditioned">1st class Air-Conditioned</MenuItem>
-                  <MenuItem value="1st class Observation Saloon">1st class Observation Saloon</MenuItem>
-                  <MenuItem value="2nd class Reserved">2nd class Reserved</MenuItem>
-                  <MenuItem value="2nd class Sleeperates">2nd class Sleeperates</MenuItem>
-                  <MenuItem value="3rd class Reserved">3rd class Reserved</MenuItem>
-                  <MenuItem value="3rd class Sleeperates">3rd class Sleeperates</MenuItem>
+                  <MenuItem value="1st class Reserved">
+                    1st class Reserved
+                  </MenuItem>
+                  <MenuItem value="1st class Sleeper">
+                    1st class Sleeper
+                  </MenuItem>
+                  <MenuItem value="1st class Air-Conditioned">
+                    1st class Air-Conditioned
+                  </MenuItem>
+                  <MenuItem value="1st class Observation Saloon">
+                    1st class Observation Saloon
+                  </MenuItem>
+                  <MenuItem value="2nd class Reserved">
+                    2nd class Reserved
+                  </MenuItem>
+                  <MenuItem value="2nd class Sleeperates">
+                    2nd class Sleeperates
+                  </MenuItem>
+                  <MenuItem value="3rd class Reserved">
+                    3rd class Reserved
+                  </MenuItem>
+                  <MenuItem value="3rd class Sleeperates">
+                    3rd class Sleeperates
+                  </MenuItem>
                 </Select>
               </FormControl>
               <br />
@@ -314,10 +331,10 @@ export default function TicAdd() {
                 label="Time"
                 type="time"
                 InputLabelProps={{
-                  shrink: true,
+                  shrink: true
                 }}
                 inputProps={{
-                  step: 300, // 5 min
+                  step: 300 // 5 min
                 }}
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
@@ -328,7 +345,7 @@ export default function TicAdd() {
                 type="date"
                 sx={{ m: 2, width: 200 }}
                 InputLabelProps={{
-                  shrink: true,
+                  shrink: true
                 }}
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
@@ -339,7 +356,8 @@ export default function TicAdd() {
                 sx={{ m: 2, width: 168 }}
                 InputProps={{
                   inputProps: {
-                    min: 0, max: 25
+                    min: 0,
+                    max: 25
                   }
                 }}
                 value={noOfSeats}
@@ -349,11 +367,13 @@ export default function TicAdd() {
               <Container sx={{ my: 2 }}>
                 <Table aria-label="customized table">
                   <StyledTableRow>
-                    <StyledTableCell align="left">Price per ticket</StyledTableCell>
+                    <StyledTableCell align="left">
+                      Price per ticket
+                    </StyledTableCell>
                     <StyledTableCell align="right">
                       {price}
                       <span>&nbsp;</span>
-                      LKR
+                      INR
                     </StyledTableCell>
                   </StyledTableRow>
                   <StyledTableRow>
@@ -361,11 +381,19 @@ export default function TicAdd() {
                     <StyledTableCell align="right">{noOfSeats}</StyledTableCell>
                   </StyledTableRow>
                   <StyledTableRow>
-                    <StyledTableCell align="left" sx={{ fontWeight: 'bold', fontSize: 18 }}>Total</StyledTableCell>
-                    <StyledTableCell align="right" sx={{ fontWeight: 'bold', fontSize: 18 }}>
+                    <StyledTableCell
+                      align="left"
+                      sx={{ fontWeight: 'bold', fontSize: 18 }}
+                    >
+                      Total
+                    </StyledTableCell>
+                    <StyledTableCell
+                      align="right"
+                      sx={{ fontWeight: 'bold', fontSize: 18 }}
+                    >
                       {price * noOfSeats}
                       <span>&nbsp;</span>
-                      LKR
+                      INR
                     </StyledTableCell>
                   </StyledTableRow>
                 </Table>
@@ -413,7 +441,9 @@ export default function TicAdd() {
                 id="outlined-start-adornment"
                 label="Tel no"
                 InputProps={{
-                  startAdornment: <InputAdornment position="start">+94</InputAdornment>,
+                  startAdornment: (
+                    <InputAdornment position="start">+91</InputAdornment>
+                  )
                 }}
                 value={tel}
                 onChange={(e) => setTel(e.target.value)}
@@ -440,16 +470,28 @@ export default function TicAdd() {
             variant="contained"
             startIcon={<SaveIcon />}
             onClick={() => addData({
-              reference: uuidv4(), startStation, endStation, train, clz, time, date, noOfSeats, price, firstName, lastName, id, email, tel, payment, createdAt: new Date()
+              reference: uuidv4(),
+              startStation,
+              endStation,
+              train,
+              clz,
+              time,
+              date,
+              noOfSeats,
+              price,
+              firstName,
+              lastName,
+              id,
+              email,
+              tel,
+              payment,
+              createdAt: new Date()
             })}
           >
             Make Reservation
           </Button>
           <span>&nbsp;&nbsp;&nbsp;</span>
-          <Button
-            variant="outlined"
-            onClick={handleClose}
-          >
+          <Button variant="outlined" onClick={handleClose}>
             Cancel
           </Button>
         </DialogActions>

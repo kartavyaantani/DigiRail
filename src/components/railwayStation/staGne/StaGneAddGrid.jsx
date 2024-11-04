@@ -7,7 +7,7 @@ import StaGneAddUp from './StaGneAddUp';
 import StaGneAddDown from './StaGneAddDown';
 
 const Item = styled(Paper)(() => ({
-  backgroundColor: 'transparent',
+  backgroundColor: 'transparent'
 }));
 
 export default function StaGneAddGrid() {
@@ -18,8 +18,12 @@ export default function StaGneAddGrid() {
         divider={<Divider orientation="vertical" flexItem />}
         spacing={2}
       >
-        <Item><StaGneAddUp /></Item>
-        <Item><StaGneAddDown /></Item>
+        <Item>
+          <StaGneAddUp />
+        </Item>
+        <Item>
+          <StaGneAddDown />
+        </Item>
       </Stack>
     </div>
   );

@@ -29,16 +29,19 @@ To run the Railway Management System locally on your machine, follow these steps
 1. **Prerequisites:** Ensure you have Node.js installed on your machine. If not, you can download it from the official Node.js website and follow the installation guide.
 
 2. **Clone the Repository:** Use the following command to clone the repository to your local machine:
+
 ```
 git clone https://github.com/lahiru1115/Railway-Management-System.git
 ```
 
 3. **Navigate to the Directory:** Enter the app directory:
+
 ```
 cd Railway-Management-System
 ```
 
 4. **Install Dependencies:** Run the following command to install the required dependencies:
+
 ```
 npm install
 ```
@@ -46,6 +49,7 @@ npm install
 5. **Configure Firebase:** Follow the Firebase setup guide to create a Firebase project and add the necessary configuration files to the app.
 
 6. **Start the Application:** Use the following command to start the application:
+
 ```
 npm start
 ```

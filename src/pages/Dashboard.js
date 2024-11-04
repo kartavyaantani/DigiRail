@@ -16,7 +16,7 @@ const Dashboard = () => (
     <Box
       sx={{
         backgroundColor: 'background.default',
-        minHeight: '100%',
+        minHeight: '100%'
       }}
     >
       <Container maxWidth={false}>
@@ -34,11 +34,11 @@ const Dashboard = () => (
                 '"Segoe UI"',
                 'Roboto',
                 'Arial',
-                'sans-serif',
-              ].join(','),
+                'sans-serif'
+              ].join(',')
             }}
           >
-            Welome to Sri Lanka Railways
+            Welome to DigiRail
           </Typography>
           <br />
           {/* <img src="/static/cover.jpg" alt="error" width="100%" /> */}
@@ -53,61 +53,28 @@ const Dashboard = () => (
           }}
         >
           <Container maxWidth={false}>
-            <Grid
-              container
-              spacing={3}
-            >
-              <Grid
-                item
-                lg={2.4}
-                sm={4.4}
-                xl={2.4}
-                xs={8.4}
-              >
+            <Grid container spacing={3}>
+              <Grid item lg={2.4} sm={4.4} xl={2.4} xs={8.4}>
                 <a href="/app/railwayStations">
                   <RailwayStation />
                 </a>
               </Grid>
-              <Grid
-                item
-                lg={2.4}
-                sm={4.4}
-                xl={2.4}
-                xs={8.4}
-              >
+              <Grid item lg={2.4} sm={4.4} xl={2.4} xs={8.4}>
                 <a href="/app/trainSchedule">
                   <TrainSchedule />
                 </a>
               </Grid>
-              <Grid
-                item
-                lg={2.4}
-                sm={4.4}
-                xl={2.4}
-                xs={8.4}
-              >
+              <Grid item lg={2.4} sm={4.4} xl={2.4} xs={8.4}>
                 <a href="/app/trainDelays">
                   <TrainDelay />
                 </a>
               </Grid>
-              <Grid
-                item
-                lg={2.4}
-                sm={4.4}
-                xl={2.4}
-                xs={8.4}
-              >
+              <Grid item lg={2.4} sm={4.4} xl={2.4} xs={8.4}>
                 <a href="/app/trainCancellations">
                   <TrainCancel />
                 </a>
               </Grid>
-              <Grid
-                item
-                lg={2.4}
-                sm={4.4}
-                xl={2.4}
-                xs={8.3}
-              >
+              <Grid item lg={2.4} sm={4.4} xl={2.4} xs={8.3}>
                 <a href="/app/ticketReservation">
                   <TicketReservation />
                 </a>

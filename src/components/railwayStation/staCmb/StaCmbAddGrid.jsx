@@ -9,7 +9,7 @@ import StaCmbAddKV from './StaCmbAddKV';
 import StaCmbAddPuttalam from './StaCmbAddPuttalam';
 
 const Item = styled(Paper)(() => ({
-  backgroundColor: 'transparent',
+  backgroundColor: 'transparent'
 }));
 
 export default function StaCmbAddGrid() {
@@ -20,10 +20,18 @@ export default function StaCmbAddGrid() {
         divider={<Divider orientation="vertical" flexItem />}
         spacing={2}
       >
-        <Item><StaCmbAddMain /></Item>
-        <Item><StaCmbAddCoastal /></Item>
-        <Item><StaCmbAddKV /></Item>
-        <Item><StaCmbAddPuttalam /></Item>
+        <Item>
+          <StaCmbAddMain />
+        </Item>
+        <Item>
+          <StaCmbAddCoastal />
+        </Item>
+        <Item>
+          <StaCmbAddKV />
+        </Item>
+        <Item>
+          <StaCmbAddPuttalam />
+        </Item>
       </Stack>
     </div>
   );

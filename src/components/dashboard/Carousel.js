@@ -9,29 +9,24 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 const images = [
   {
     label: '1',
-    imgPath:
-      '/static/banner_1.jpg',
+    imgPath: '/static/banner_1.jpg'
   },
   {
     label: '2',
-    imgPath:
-      '/static/banner_2.jpg',
+    imgPath: '/static/banner_2.jpg'
   },
   {
     label: '3',
-    imgPath:
-      '/static/banner_3.jpg',
+    imgPath: '/static/banner_3.jpg'
   },
   {
     label: '4',
-    imgPath:
-      '/static/banner_4.jpg',
+    imgPath: '/static/banner_4.jpg'
   },
   {
     label: '5',
-    imgPath:
-      '/static/banner_5.jpg',
-  },
+    imgPath: '/static/banner_5.jpg'
+  }
 ];
 
 function Carousel() {
@@ -59,7 +54,7 @@ function Carousel() {
                 sx={{
                   display: 'block',
                   overflow: 'hidden',
-                  width: '100%',
+                  width: '100%'
                 }}
                 src={step.imgPath}
                 alt={step.label}

@@ -20,11 +20,11 @@ import firebase from '../../../firebase/Firebase';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
-    padding: theme.spacing(2),
+    padding: theme.spacing(2)
   },
   '& .MuiDialogActions-root': {
-    padding: theme.spacing(1),
-  },
+    padding: theme.spacing(1)
+  }
 }));
 
 const BootstrapDialogTitle = (props) => {
@@ -41,7 +41,7 @@ const BootstrapDialogTitle = (props) => {
             position: 'absolute',
             right: 8,
             top: 8,
-            color: (theme) => theme.palette.grey[500],
+            color: (theme) => theme.palette.grey[500]
           }}
         >
           <CloseIcon />
@@ -53,7 +53,7 @@ const BootstrapDialogTitle = (props) => {
 
 BootstrapDialogTitle.propTypes = {
   children: PropTypes.node,
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired
 };
 
 export default function StaCmbAddCoastal() {
@@ -85,7 +85,11 @@ export default function StaCmbAddCoastal() {
 
   return (
     <div>
-      <Button variant="contained" startIcon={<AddIcon />} onClick={handleClickOpen}>
+      <Button
+        variant="contained"
+        startIcon={<AddIcon />}
+        onClick={handleClickOpen}
+      >
         Add New Coastal
       </Button>
       <BootstrapDialog
@@ -93,7 +97,10 @@ export default function StaCmbAddCoastal() {
         aria-labelledby="customized-dialog-title"
         open={open}
       >
-        <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
+        <BootstrapDialogTitle
+          id="customized-dialog-title"
+          onClose={handleClose}
+        >
           <h2>Add New Schedule COASTAL Line</h2>
         </BootstrapDialogTitle>
         <DialogContent dividers>
@@ -113,10 +120,10 @@ export default function StaCmbAddCoastal() {
             label="Departure Time"
             type="time"
             InputLabelProps={{
-              shrink: true,
+              shrink: true
             }}
             inputProps={{
-              step: 300, // 5 min
+              step: 300 // 5 min
             }}
             value={time}
             onChange={(e) => setTime(e.target.value)}
@@ -193,21 +200,49 @@ export default function StaCmbAddCoastal() {
               <MenuItem value="Friday only">Friday only</MenuItem>
               <MenuItem value="Saturday only">Saturday only</MenuItem>
               <MenuItem value="Sundays only">Sundays only</MenuItem>
-              <MenuItem value="Monday and Saturday only">Monday and Saturday only</MenuItem>
-              <MenuItem value="Friday and Sunday only">Friday and Sunday only</MenuItem>
-              <MenuItem value="Friday and Saturday only">Friday and Saturday only</MenuItem>
-              <MenuItem value="Saturday and Sunday only">Saturday and Sunday only</MenuItem>
-              <MenuItem value="Weekdays and Saturday only">Weekdays and Saturday only</MenuItem>
-              <MenuItem value="Public holidays only">Public holidays only</MenuItem>
-              <MenuItem value="Sunday and Poya days only">Sunday and Poya days only</MenuItem>
-              <MenuItem value="Saturday, Sunday and Poya days only">Saturday, Sunday and Poya days only</MenuItem>
-              <MenuItem value="Saturday, Sunday and public holidays only">Saturday, Sunday and public holidays only</MenuItem>
+              <MenuItem value="Monday and Saturday only">
+                Monday and Saturday only
+              </MenuItem>
+              <MenuItem value="Friday and Sunday only">
+                Friday and Sunday only
+              </MenuItem>
+              <MenuItem value="Friday and Saturday only">
+                Friday and Saturday only
+              </MenuItem>
+              <MenuItem value="Saturday and Sunday only">
+                Saturday and Sunday only
+              </MenuItem>
+              <MenuItem value="Weekdays and Saturday only">
+                Weekdays and Saturday only
+              </MenuItem>
+              <MenuItem value="Public holidays only">
+                Public holidays only
+              </MenuItem>
+              <MenuItem value="Sunday and Poya days only">
+                Sunday and Poya days only
+              </MenuItem>
+              <MenuItem value="Saturday, Sunday and Poya days only">
+                Saturday, Sunday and Poya days only
+              </MenuItem>
+              <MenuItem value="Saturday, Sunday and public holidays only">
+                Saturday, Sunday and public holidays only
+              </MenuItem>
               <MenuItem value="Except on Sunday">Except on Sunday</MenuItem>
-              <MenuItem value="Except on Public holidays">Except on Public holidays</MenuItem>
-              <MenuItem value="Except on Sunday and Poya days">Except on Sunday and Poya days</MenuItem>
-              <MenuItem value="Except on Sunday and public holidays">Except on Sunday and public holidays</MenuItem>
-              <MenuItem value="Except on Saturday, Sunday and Poya days">Except on Saturday, Sunday and Poya days</MenuItem>
-              <MenuItem value="Except on Saturday, Sunday and public holidays">Except on Saturday, Sunday and public holidays</MenuItem>
+              <MenuItem value="Except on Public holidays">
+                Except on Public holidays
+              </MenuItem>
+              <MenuItem value="Except on Sunday and Poya days">
+                Except on Sunday and Poya days
+              </MenuItem>
+              <MenuItem value="Except on Sunday and public holidays">
+                Except on Sunday and public holidays
+              </MenuItem>
+              <MenuItem value="Except on Saturday, Sunday and Poya days">
+                Except on Saturday, Sunday and Poya days
+              </MenuItem>
+              <MenuItem value="Except on Saturday, Sunday and public holidays">
+                Except on Saturday, Sunday and public holidays
+              </MenuItem>
             </Select>
           </FormControl>
         </DialogContent>
@@ -216,16 +251,18 @@ export default function StaCmbAddCoastal() {
             variant="contained"
             startIcon={<SaveIcon />}
             onClick={() => addData({
-              id: uuidv4(), time, destination, type, frequency, createdAt: new Date()
+              id: uuidv4(),
+              time,
+              destination,
+              type,
+              frequency,
+              createdAt: new Date()
             })}
           >
             Save
           </Button>
           <span>&nbsp;&nbsp;&nbsp;</span>
-          <Button
-            variant="outlined"
-            onClick={handleClose}
-          >
+          <Button variant="outlined" onClick={handleClose}>
             Cancel
           </Button>
         </DialogActions>

@@ -16,7 +16,7 @@ export default function Login() {
   return (
     <>
       <Helmet>
-        <title>Login | Sri Lanka Railways</title>
+        <title>Login | DigiRail </title>
       </Helmet>
       <Box
         sx={{
@@ -34,7 +34,10 @@ export default function Login() {
               password: ''
             }}
             validationSchema={Yup.object().shape({
-              email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
+              email: Yup.string()
+                .email('Must be a valid email')
+                .max(255)
+                .required('Email is required'),
               password: Yup.string().max(255).required('Password is required')
             })}
             onSubmit={() => {
@@ -52,20 +55,12 @@ export default function Login() {
             }) => (
               <form onSubmit={handleSubmit}>
                 <Box sx={{ mb: 2 }}>
-                  <Typography
-                    align="center"
-                    color="textPrimary"
-                    variant="h1"
-                  >
-                    Sri Lanka Railways
+                  <Typography align="center" color="textPrimary" variant="h1">
+                    DigiRail
                   </Typography>
                 </Box>
                 <Box sx={{ mb: 5 }}>
-                  <Typography
-                    align="center"
-                    color="textPrimary"
-                    variant="h3"
-                  >
+                  <Typography align="center" color="textPrimary" variant="h3">
                     Sign In
                   </Typography>
                 </Box>

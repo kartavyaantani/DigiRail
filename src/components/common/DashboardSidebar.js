@@ -21,8 +21,8 @@ import NavItem from './NavItem';
 
 const user = {
   avatar: '/static/avatar.png',
-  jobTitle: 'lahiru.d@railway.gov.lk',
-  name: 'Lahiru Dissanayake'
+  jobTitle: 'digirail@gmail.com',
+  name: 'On track for a better journey'
 };
 
 const items = [
@@ -60,7 +60,7 @@ const items = [
     href: '/login',
     icon: LogoutIcon,
     title: 'Log Out'
-  },
+  }
 ];
 
 const DashboardSidebar = ({ onMobileClose, openMobile }) => {
@@ -99,16 +99,10 @@ const DashboardSidebar = ({ onMobileClose, openMobile }) => {
           }}
           to="/app/account"
         />
-        <Typography
-          color="textPrimary"
-          variant="h5"
-        >
+        <Typography color="textPrimary" variant="h5">
           {user.name}
         </Typography>
-        <Typography
-          color="textSecondary"
-          variant="body2"
-        >
+        <Typography color="textSecondary" variant="body2">
           {user.jobTitle}
         </Typography>
       </Box>
@@ -172,8 +166,7 @@ DashboardSidebar.propTypes = {
 };
 
 DashboardSidebar.defaultProps = {
-  onMobileClose: () => {
-  },
+  onMobileClose: () => {},
   openMobile: false
 };
 

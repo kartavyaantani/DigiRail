@@ -22,27 +22,27 @@ import firebase from '../../firebase/Firebase';
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650,
-  },
+    minWidth: 650
+  }
 });
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    color: theme.palette.common.white
   },
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
-  },
+    fontSize: 14
+  }
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
-    backgroundColor: theme.palette.action.hover,
+    backgroundColor: theme.palette.action.hover
   },
   '&:last-child td, &:last-child th': {
-    border: 0,
-  },
+    border: 0
+  }
 }));
 
 export default function TableCancelArc() {
@@ -114,7 +114,9 @@ export default function TableCancelArc() {
               <StyledTableCell align="left">{data.trainNo}</StyledTableCell>
               <StyledTableCell align="left">{data.trainName}</StyledTableCell>
               <StyledTableCell align="left">{data.trainType}</StyledTableCell>
-              <StyledTableCell align="left">{data.startStation}</StyledTableCell>
+              <StyledTableCell align="left">
+                {data.startStation}
+              </StyledTableCell>
               <StyledTableCell align="left">{data.startTime}</StyledTableCell>
               <StyledTableCell align="left">{data.endStation}</StyledTableCell>
               <StyledTableCell align="left">{data.date}</StyledTableCell>
@@ -126,7 +128,12 @@ export default function TableCancelArc() {
                 {new Date(data.createdAt.toDate()).toLocaleTimeString()}
               </StyledTableCell>
               <StyledTableCell align="center">
-                <IconButton aria-label="delete" color="error" size="small" onClick={handleClickOpen}>
+                <IconButton
+                  aria-label="delete"
+                  color="error"
+                  size="small"
+                  onClick={handleClickOpen}
+                >
                   <DeleteIcon />
                 </IconButton>
                 <Dialog
@@ -140,15 +147,20 @@ export default function TableCancelArc() {
                   </DialogTitle>
                   <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                      <div style={{
-                        marginTop: 5,
-                        marginLeft: 10,
-                        marginRight: 50,
-                        display: 'flex',
-                        alignItems: 'center',
-                      }}
+                      <div
+                        style={{
+                          marginTop: 5,
+                          marginLeft: 10,
+                          marginRight: 50,
+                          display: 'flex',
+                          alignItems: 'center'
+                        }}
                       >
-                        <WarningIcon color="error" fontSize="large" sx={{ mr: 5 }} />
+                        <WarningIcon
+                          color="error"
+                          fontSize="large"
+                          sx={{ mr: 5 }}
+                        />
                         <span>
                           Do you really want to delete this record?
                           <br />
@@ -158,9 +170,18 @@ export default function TableCancelArc() {
                     </DialogContentText>
                   </DialogContent>
                   <DialogActions sx={{ m: 1 }}>
-                    <Button variant="contained" startIcon={<DeleteIcon />} onClick={() => deleteData(data.id)} autoFocus>Delete</Button>
+                    <Button
+                      variant="contained"
+                      startIcon={<DeleteIcon />}
+                      onClick={() => deleteData(data.id)}
+                      autoFocus
+                    >
+                      Delete
+                    </Button>
                     <span>&nbsp;&nbsp;</span>
-                    <Button variant="outlined" onClick={handleClose}>Cancel</Button>
+                    <Button variant="outlined" onClick={handleClose}>
+                      Cancel
+                    </Button>
                   </DialogActions>
                 </Dialog>
               </StyledTableCell>

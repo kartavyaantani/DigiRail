@@ -22,27 +22,27 @@ import firebase from '../../../firebase/Firebase';
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650,
-  },
+    minWidth: 650
+  }
 });
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    color: theme.palette.common.white
   },
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
-  },
+    fontSize: 14
+  }
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
-    backgroundColor: theme.palette.action.hover,
+    backgroundColor: theme.palette.action.hover
   },
   '&:last-child td, &:last-child th': {
-    border: 0,
-  },
+    border: 0
+  }
 }));
 
 export default function StaBmuTableDown() {
@@ -62,16 +62,14 @@ export default function StaBmuTableDown() {
 
   function getData() {
     setLoading(true);
-    ref
-      .orderBy('time')
-      .onSnapshot((querySnapshot) => {
-        const items = [];
-        querySnapshot.forEach((doc) => {
-          items.push(doc.data());
-        });
-        setData(items);
-        setLoading(false);
+    ref.orderBy('time').onSnapshot((querySnapshot) => {
+      const items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
       });
+      setData(items);
+      setLoading(false);
+    });
   }
 
   function deleteData(data) {
@@ -109,7 +107,12 @@ export default function StaBmuTableDown() {
               <StyledTableCell align="left">{data.type}</StyledTableCell>
               <StyledTableCell align="left">{data.frequency}</StyledTableCell>
               <StyledTableCell align="center">
-                <IconButton aria-label="delete" color="error" size="small" onClick={handleClickOpen}>
+                <IconButton
+                  aria-label="delete"
+                  color="error"
+                  size="small"
+                  onClick={handleClickOpen}
+                >
                   <DeleteIcon />
                 </IconButton>
                 <Dialog
@@ -123,15 +126,20 @@ export default function StaBmuTableDown() {
                   </DialogTitle>
                   <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                      <div style={{
-                        marginTop: 5,
-                        marginLeft: 10,
-                        marginRight: 50,
-                        display: 'flex',
-                        alignItems: 'center',
-                      }}
+                      <div
+                        style={{
+                          marginTop: 5,
+                          marginLeft: 10,
+                          marginRight: 50,
+                          display: 'flex',
+                          alignItems: 'center'
+                        }}
                       >
-                        <WarningIcon color="error" fontSize="large" sx={{ mr: 5 }} />
+                        <WarningIcon
+                          color="error"
+                          fontSize="large"
+                          sx={{ mr: 5 }}
+                        />
                         <span>
                           Do you really want to delete this record?
                           <br />
@@ -141,9 +149,18 @@ export default function StaBmuTableDown() {
                     </DialogContentText>
                   </DialogContent>
                   <DialogActions sx={{ m: 1 }}>
-                    <Button variant="contained" startIcon={<DeleteIcon />} onClick={() => deleteData(data.id)} autoFocus>Delete</Button>
+                    <Button
+                      variant="contained"
+                      startIcon={<DeleteIcon />}
+                      onClick={() => deleteData(data.id)}
+                      autoFocus
+                    >
+                      Delete
+                    </Button>
                     <span>&nbsp;&nbsp;</span>
-                    <Button variant="outlined" onClick={handleClose}>Cancel</Button>
+                    <Button variant="outlined" onClick={handleClose}>
+                      Cancel
+                    </Button>
                   </DialogActions>
                 </Dialog>
               </StyledTableCell>

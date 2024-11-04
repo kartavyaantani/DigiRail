@@ -7,7 +7,7 @@ import StaGmpAddUp from './StaGmpAddUp';
 import StaGmpAddDown from './StaGmpAddDown';
 
 const Item = styled(Paper)(() => ({
-  backgroundColor: 'transparent',
+  backgroundColor: 'transparent'
 }));
 
 export default function StaGmpAddGrid() {
@@ -18,8 +18,12 @@ export default function StaGmpAddGrid() {
         divider={<Divider orientation="vertical" flexItem />}
         spacing={2}
       >
-        <Item><StaGmpAddUp /></Item>
-        <Item><StaGmpAddDown /></Item>
+        <Item>
+          <StaGmpAddUp />
+        </Item>
+        <Item>
+          <StaGmpAddDown />
+        </Item>
       </Stack>
     </div>
   );

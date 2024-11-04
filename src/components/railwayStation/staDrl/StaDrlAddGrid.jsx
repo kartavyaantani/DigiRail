@@ -7,7 +7,7 @@ import StaDrlAddUp from './StaDrlAddUp';
 import StaDrlAddDown from './StaDrlAddDown';
 
 const Item = styled(Paper)(() => ({
-  backgroundColor: 'transparent',
+  backgroundColor: 'transparent'
 }));
 
 export default function StaDrlAddGrid() {
@@ -18,8 +18,12 @@ export default function StaDrlAddGrid() {
         divider={<Divider orientation="vertical" flexItem />}
         spacing={2}
       >
-        <Item><StaDrlAddUp /></Item>
-        <Item><StaDrlAddDown /></Item>
+        <Item>
+          <StaDrlAddUp />
+        </Item>
+        <Item>
+          <StaDrlAddDown />
+        </Item>
       </Stack>
     </div>
   );

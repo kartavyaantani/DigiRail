@@ -25,36 +25,36 @@ import firebase from '../../firebase/Firebase';
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650,
-  },
+    minWidth: 650
+  }
 });
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    color: theme.palette.common.white
   },
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
-  },
+    fontSize: 14
+  }
 }));
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   '&:nth-of-type(odd)': {
-    backgroundColor: theme.palette.action.hover,
+    backgroundColor: theme.palette.action.hover
   },
   '&:last-child td, &:last-child th': {
-    border: 0,
-  },
+    border: 0
+  }
 }));
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
-    padding: theme.spacing(2),
+    padding: theme.spacing(2)
   },
   '& .MuiDialogActions-root': {
-    padding: theme.spacing(1),
-  },
+    padding: theme.spacing(1)
+  }
 }));
 
 const BootstrapDialogTitle = (props) => {
@@ -71,7 +71,7 @@ const BootstrapDialogTitle = (props) => {
             position: 'absolute',
             right: 8,
             top: 8,
-            color: (theme) => theme.palette.grey[500],
+            color: (theme) => theme.palette.grey[500]
           }}
         >
           <CloseIcon />
@@ -83,7 +83,7 @@ const BootstrapDialogTitle = (props) => {
 
 BootstrapDialogTitle.propTypes = {
   children: PropTypes.node,
-  onClose: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired
 };
 
 export default function TicTable() {
@@ -103,15 +103,14 @@ export default function TicTable() {
 
   function getData() {
     setLoading(true);
-    ref
-      .onSnapshot((querySnapshot) => {
-        const items = [];
-        querySnapshot.forEach((doc) => {
-          items.push(doc.data());
-        });
-        setData(items);
-        setLoading(false);
+    ref.onSnapshot((querySnapshot) => {
+      const items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
       });
+      setData(items);
+      setLoading(false);
+    });
   }
 
   function deleteData(data) {
@@ -166,20 +165,31 @@ export default function TicTable() {
                   aria-labelledby="customized-dialog-title"
                   open={open}
                 >
-                  <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
+                  <BootstrapDialogTitle
+                    id="customized-dialog-title"
+                    onClose={handleClose}
+                  >
                     <h2>More Details</h2>
                   </BootstrapDialogTitle>
                   <DialogContent dividers>
                     <Container>
                       <Table aria-label="customized table">
                         <StyledTableRow>
-                          <StyledTableCell align="left" sx={{ fontWeight: 'bold' }}>Reference No</StyledTableCell>
+                          <StyledTableCell
+                            align="left"
+                            sx={{ fontWeight: 'bold' }}
+                          >
+                            Reference No
+                          </StyledTableCell>
                           <StyledTableCell align="right">
                             {data.reference}
                           </StyledTableCell>
                         </StyledTableRow>
                         <StyledTableRow>
-                          <StyledTableCell align="left" sx={{ fontWeight: 'bold' }}>
+                          <StyledTableCell
+                            align="left"
+                            sx={{ fontWeight: 'bold' }}
+                          >
                             Start
                             <span>&nbsp;&amp;&nbsp;</span>
                             End
@@ -195,15 +205,32 @@ export default function TicTable() {
                           </StyledTableCell>
                         </StyledTableRow>
                         <StyledTableRow>
-                          <StyledTableCell align="left" sx={{ fontWeight: 'bold' }}>Train</StyledTableCell>
-                          <StyledTableCell align="right">{data.train}</StyledTableCell>
+                          <StyledTableCell
+                            align="left"
+                            sx={{ fontWeight: 'bold' }}
+                          >
+                            Train
+                          </StyledTableCell>
+                          <StyledTableCell align="right">
+                            {data.train}
+                          </StyledTableCell>
                         </StyledTableRow>
                         <StyledTableRow>
-                          <StyledTableCell align="left" sx={{ fontWeight: 'bold' }}>Class</StyledTableCell>
-                          <StyledTableCell align="right">{data.clz}</StyledTableCell>
+                          <StyledTableCell
+                            align="left"
+                            sx={{ fontWeight: 'bold' }}
+                          >
+                            Class
+                          </StyledTableCell>
+                          <StyledTableCell align="right">
+                            {data.clz}
+                          </StyledTableCell>
                         </StyledTableRow>
                         <StyledTableRow>
-                          <StyledTableCell align="left" sx={{ fontWeight: 'bold' }}>
+                          <StyledTableCell
+                            align="left"
+                            sx={{ fontWeight: 'bold' }}
+                          >
                             Date
                             <span>&nbsp;&amp;&nbsp;</span>
                             Time
@@ -215,11 +242,23 @@ export default function TicTable() {
                           </StyledTableCell>
                         </StyledTableRow>
                         <StyledTableRow>
-                          <StyledTableCell align="left" sx={{ fontWeight: 'bold' }}>No of Seats</StyledTableCell>
-                          <StyledTableCell align="right">{data.noOfSeats}</StyledTableCell>
+                          <StyledTableCell
+                            align="left"
+                            sx={{ fontWeight: 'bold' }}
+                          >
+                            No of Seats
+                          </StyledTableCell>
+                          <StyledTableCell align="right">
+                            {data.noOfSeats}
+                          </StyledTableCell>
                         </StyledTableRow>
                         <StyledTableRow>
-                          <StyledTableCell align="left" sx={{ fontWeight: 'bold' }}>Name</StyledTableCell>
+                          <StyledTableCell
+                            align="left"
+                            sx={{ fontWeight: 'bold' }}
+                          >
+                            Name
+                          </StyledTableCell>
                           <StyledTableCell align="right">
                             {data.firstName}
                             <span>&nbsp;</span>
@@ -227,19 +266,45 @@ export default function TicTable() {
                           </StyledTableCell>
                         </StyledTableRow>
                         <StyledTableRow>
-                          <StyledTableCell align="left" sx={{ fontWeight: 'bold' }}>ID</StyledTableCell>
-                          <StyledTableCell align="right">{data.id}</StyledTableCell>
+                          <StyledTableCell
+                            align="left"
+                            sx={{ fontWeight: 'bold' }}
+                          >
+                            ID
+                          </StyledTableCell>
+                          <StyledTableCell align="right">
+                            {data.id}
+                          </StyledTableCell>
                         </StyledTableRow>
                         <StyledTableRow>
-                          <StyledTableCell align="left" sx={{ fontWeight: 'bold' }}>Email</StyledTableCell>
-                          <StyledTableCell align="right">{data.email}</StyledTableCell>
+                          <StyledTableCell
+                            align="left"
+                            sx={{ fontWeight: 'bold' }}
+                          >
+                            Email
+                          </StyledTableCell>
+                          <StyledTableCell align="right">
+                            {data.email}
+                          </StyledTableCell>
                         </StyledTableRow>
                         <StyledTableRow>
-                          <StyledTableCell align="left" sx={{ fontWeight: 'bold' }}>Tel No</StyledTableCell>
-                          <StyledTableCell align="right">{data.tel}</StyledTableCell>
+                          <StyledTableCell
+                            align="left"
+                            sx={{ fontWeight: 'bold' }}
+                          >
+                            Tel No
+                          </StyledTableCell>
+                          <StyledTableCell align="right">
+                            {data.tel}
+                          </StyledTableCell>
                         </StyledTableRow>
                         <StyledTableRow>
-                          <StyledTableCell align="left" sx={{ fontWeight: 'bold' }}>Total</StyledTableCell>
+                          <StyledTableCell
+                            align="left"
+                            sx={{ fontWeight: 'bold' }}
+                          >
+                            Total
+                          </StyledTableCell>
                           <StyledTableCell align="right">
                             {data.price}
                             <span>&nbsp;</span>
@@ -247,25 +312,36 @@ export default function TicTable() {
                           </StyledTableCell>
                         </StyledTableRow>
                         <StyledTableRow>
-                          <StyledTableCell align="left" sx={{ fontWeight: 'bold' }}>Payment</StyledTableCell>
-                          <StyledTableCell align="right">{data.payment}</StyledTableCell>
+                          <StyledTableCell
+                            align="left"
+                            sx={{ fontWeight: 'bold' }}
+                          >
+                            Payment
+                          </StyledTableCell>
+                          <StyledTableCell align="right">
+                            {data.payment}
+                          </StyledTableCell>
                         </StyledTableRow>
                         <StyledTableRow>
-                          <StyledTableCell align="left" sx={{ fontWeight: 'bold' }}>Reserved at</StyledTableCell>
+                          <StyledTableCell
+                            align="left"
+                            sx={{ fontWeight: 'bold' }}
+                          >
+                            Reserved at
+                          </StyledTableCell>
                           <StyledTableCell align="right">
                             {new Date(data.createdAt.toDate()).toDateString()}
                             <span>&nbsp;</span>
-                            {new Date(data.createdAt.toDate()).toLocaleTimeString()}
+                            {new Date(
+                              data.createdAt.toDate()
+                            ).toLocaleTimeString()}
                           </StyledTableCell>
                         </StyledTableRow>
                       </Table>
                     </Container>
                   </DialogContent>
                   <DialogActions sx={{ m: 1 }}>
-                    <Button
-                      variant="outlined"
-                      onClick={handleClose}
-                    >
+                    <Button variant="outlined" onClick={handleClose}>
                       Close
                     </Button>
                   </DialogActions>
@@ -285,15 +361,20 @@ export default function TicTable() {
                   </DialogTitle>
                   <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                      <div style={{
-                        marginTop: 5,
-                        marginLeft: 10,
-                        marginRight: 50,
-                        display: 'flex',
-                        alignItems: 'center',
-                      }}
+                      <div
+                        style={{
+                          marginTop: 5,
+                          marginLeft: 10,
+                          marginRight: 50,
+                          display: 'flex',
+                          alignItems: 'center'
+                        }}
                       >
-                        <WarningIcon color="error" fontSize="large" sx={{ mr: 5 }} />
+                        <WarningIcon
+                          color="error"
+                          fontSize="large"
+                          sx={{ mr: 5 }}
+                        />
                         <span>
                           Do you really want to delete this record?
                           <br />
@@ -303,9 +384,18 @@ export default function TicTable() {
                     </DialogContentText>
                   </DialogContent>
                   <DialogActions sx={{ m: 1 }}>
-                    <Button variant="contained" startIcon={<DeleteIcon />} onClick={() => deleteData(data.id)} autoFocus>Delete</Button>
+                    <Button
+                      variant="contained"
+                      startIcon={<DeleteIcon />}
+                      onClick={() => deleteData(data.id)}
+                      autoFocus
+                    >
+                      Delete
+                    </Button>
                     <span>&nbsp;&nbsp;</span>
-                    <Button variant="outlined" onClick={handleClose}>Cancel</Button>
+                    <Button variant="outlined" onClick={handleClose}>
+                      Cancel
+                    </Button>
                   </DialogActions>
                 </Dialog>
               </StyledTableCell>

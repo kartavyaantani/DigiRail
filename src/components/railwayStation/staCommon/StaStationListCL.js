@@ -33,13 +33,13 @@ function TabPanel(props) {
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired
 };
 
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
+    'aria-controls': `vertical-tabpanel-${index}`
   };
 }
 
@@ -53,7 +53,8 @@ export default function StaStationListCL() {
   return (
     <Box
       sx={{
-        flexGrow: 1, display: 'flex'
+        flexGrow: 1,
+        display: 'flex'
       }}
     >
       <Tabs

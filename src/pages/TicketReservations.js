@@ -12,7 +12,7 @@ const TicketReservation = () => (
     <Box
       sx={{
         backgroundColor: 'background.default',
-        minHeight: '100%',
+        minHeight: '100%'
       }}
     >
       <Container maxWidth={false}>
